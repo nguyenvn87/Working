@@ -42,8 +42,11 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		List list = personService.selectAllPerson();
-		System.out.println(list.size());
+		List<PersonVO> list = personService.selectAllPerson();
+		for(PersonVO vo : list) {
+			System.out.println(vo.getId() + " / "+ vo.getName());
+		}
+		//System.out.println(list.size());
 		
 		return "home";
 	}
