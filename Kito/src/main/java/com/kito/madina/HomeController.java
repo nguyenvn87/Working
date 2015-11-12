@@ -48,7 +48,7 @@ public class HomeController {
 		}
 		//System.out.println(list.size());
 		
-		return "home";
+		return "index";
 	}
 	
 }

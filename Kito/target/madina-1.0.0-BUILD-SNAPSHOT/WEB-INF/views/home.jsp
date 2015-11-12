@@ -2,6 +2,8 @@
 <%@ page session="false" %>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="<c:url value="/js/extjs/ext-all.js"/>">
+
 	<title>Home</title>
 </head>
 <body>
