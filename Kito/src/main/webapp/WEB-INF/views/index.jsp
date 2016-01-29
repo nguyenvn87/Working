@@ -10,7 +10,32 @@
     
         <link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="<c:url value="/js/index.js"/>">
-		
+		<script>
+			var contextPath = '<%=request.getContextPath()%>';
+			function loginFunction(){
+
+				_url = contextPath + '/login.do';
+	        	$.ajax(_url, {
+	        		type:'POST',
+	        		data: { 
+						userName: 'nguyen',
+						pass: '123456'
+					},
+	        	      success: function(data) {
+	        	    	 console.log('data');
+	        	         console.log(data);
+	        	         //  
+				 		 var test = '<%=request.getScheme()+ "://" + request.getServerName() + ":"  
+	        	         					+ request.getServerPort() 
+	        	         					+ request.getContextPath()%>/home.do'; 
+	        	         window.location = test;
+	        	      },
+	        	      error: function() {
+	        	        
+	        	      }
+	        	   });
+			}
+		</script>
     
     
     
@@ -30,7 +55,7 @@
         <p id="logint" style="opacity: 1;">Login as an existing user</p>
         <p id="nameal" style="display: none; opacity: 1;">ID:</p>
         <p id="passal" style="display: none; opacity: 1;">Password:</p>
-        <button id="signupb" style="opacity: 0.2; cursor: default;">Sign up</button>
+        <button id="signupb" style="opacity: 0.2; cursor: default;" onclick="loginFunction()">Sign up</button>
     </div>
 </div>
     

@@ -76,13 +76,31 @@ $(function () {
             blsp()
         }
     }
-    $('#signupb').click(function () {
+   /* $('#signupb').click(function () {
+    	
         if (flg.name == 0 && flg.pass == 0) {
+        	// Request
+        	_url = contextPath + '/login.do';
+        	$.ajax(_url, {
+        		params: { 
+					userName: 'nguyen',
+					pass: '123456'
+				},
+        	      success: function(data) {
+        	    	 console.log('data');
+        	         console.log(data);
+        	         var abc = '<%=request.getScheme()%>';
+        	      },
+        	      error: function() {
+        	        
+        	      }
+        	   });
+        	
             $('#sumsk').fadeIn();
             $('#name, #pass, #logint, #nameal, #passal, #signupb').css('opacity', '0.2');
             $('#close').fadeIn()
         }
-    });
+    });*/
     $('#close').click(function () {
         init();
         initub();

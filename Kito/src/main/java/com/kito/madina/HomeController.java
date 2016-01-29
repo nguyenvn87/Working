@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Locale;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -50,5 +51,38 @@ public class HomeController {
 		
 		return "index";
 	}
-	
+	@RequestMapping("/login.do")
+	public String login(Locale locale, Model model, HttpServletRequest req) {
+		
+		System.out.println("Name = "+req.getParameter("userName")+ " Pass: "+ req.getParameter("pass"));
+		List<PersonVO> list = personService.selectAllPerson();
+		for(PersonVO vo : list) {
+			System.out.println(vo.getId() + " / "+ vo.getName());
+		}
+		System.out.println("Test login");
+		
+		return "home";
+	}
+	@RequestMapping("/application.do")
+	public String applycation(Locale locale, Model model) {
+		
+		List<PersonVO> list = personService.selectAllPerson();
+		for(PersonVO vo : list) {
+			System.out.println(vo.getId() + " / "+ vo.getName());
+		}
+		System.out.println("Nguyen Soai" + "home" );
+		
+		return "application";
+	}
+	@RequestMapping("/home.do")
+	public String home(Locale locale, Model model, HttpServletRequest req) {
+		
+		List<PersonVO> list = personService.selectAllPerson();
+		for(PersonVO vo : list) {
+			System.out.println(vo.getId() + " / "+ vo.getName());
+		}
+		System.out.println("This is home");
+		
+		return "home";
+	}
 }

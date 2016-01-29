@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>
-	Xin chao the gioi, this is hom page
+	Hello world!  
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
