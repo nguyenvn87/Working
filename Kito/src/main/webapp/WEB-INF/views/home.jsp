@@ -9,6 +9,8 @@
 
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/extjs/ext-all.js" charset="utf-8"></script>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/js/extjs/resources/css/ext-all.css" />
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/theme.css" />
+
 
 <title>Home</title>
 </head>
@@ -23,7 +25,7 @@
         
     	var displayPanel = new Ext.Panel({
     	    height   : 800,
-    	    //layout: 'fit',
+    	   // layout: 'fit',
     	    renderTo  : 'main1',
     	    layout:'border',
     	    defaults: {
@@ -49,13 +51,13 @@
 	                    contentEl: 'left-updatefile',
 	                    iconCls: 'nav' 
 	                },{
-	                    title: 'Tra cứu',
+	                    title: 'User',
 	                    contentEl: 'left-search',
-	                    iconCls: 'search'
+	                    iconCls: 'user'
 	                }, {
-	                    title: 'Danh mục',
+	                    title: 'Hàng hóa',
 	                    contentEl: 'div-danhmuc',
-	                    iconCls: 'info'
+	                    iconCls: 'products'
 	                },
 	                {
 	                    title: 'Thiết lập kho',
@@ -81,7 +83,7 @@
     	  });
     });
     </script>
-    <div id="main1" style="width: 100%; border: none;"></div>
+    <div id="main1" style="width: 100%; height: 100%; border: none;"></div>
     <div id="left-updatefile">
     	<ul>
     		<li>Item 1</li>
@@ -109,7 +111,6 @@
     	</ul>
     </div>
     <div id="div-main">
-    	Ôi my god
     </div>
 </body>
 </html>
